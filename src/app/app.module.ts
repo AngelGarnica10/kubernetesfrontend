@@ -15,6 +15,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '@src/environments/environment';
 
+import { IndicatorsModule } from './shared/indicators';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -30,7 +33,10 @@ import { environment } from '@src/environments/environment';
     AngularFireModule.initializeApp(environment.firebase.config),
     AngularFireStorageModule,
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+
+    IndicatorsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class AppComponent implements OnInit {
   title = 'kubernetesfrontend';
+  showSpinner = false;
 
   constructor( private fs:AngularFirestore ) { }
 
@@ -15,5 +16,9 @@ export class AppComponent implements OnInit {
     this.fs.collection('test').stateChanges().subscribe( personas => {
       console.log(personas.map( x => x.payload.doc.data()));
     });
+  }
+
+  onToggleSpinner(): void {
+    this.showSpinner = !this.showSpinner;
   }
 }
