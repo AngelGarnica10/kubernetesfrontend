@@ -5,7 +5,7 @@
 
   <div class="files-upload__content">
 
-    <div class="dropzone">
+    <div class="dropzone" appDropZone (hovered)="toggleHover($event)" [class.dropzone__hovered]="isHovering">
       <div class="dropzone__label">Arrastra tus archivos aqui</div>
       <div class="dropzone__file">
         <label class="file" >

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./files-upload.component.scss']
 })
 export class FilesUploadComponent {
+  isHovering = false;
 
+  toggleHover(event: boolean): void {
+    this.isHovering = event;
+  }
 }
