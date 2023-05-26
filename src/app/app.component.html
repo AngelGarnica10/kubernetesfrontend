@@ -3,3 +3,6 @@
 <app-spinner *ngIf="showSpinner" ></app-spinner>
 
 <button appFilesUpload [multiple]="true" (changed)="onFilesChanged($event)" > Subir imagenes al servidor </button>
+
+<button (click)="onSuccess()" > Mesnaje Exito </button>
+<button (click)="onError()" > Mesnaje Error </button>
