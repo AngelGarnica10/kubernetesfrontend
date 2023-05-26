@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupsModule } from './shared/popups';
 import { NotificationModule } from './services';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { NotificationModule } from './services';
     IndicatorsModule,
     BrowserAnimationsModule,
     PopupsModule,
-    NotificationModule.forRoot()
+    NotificationModule.forRoot(),
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
