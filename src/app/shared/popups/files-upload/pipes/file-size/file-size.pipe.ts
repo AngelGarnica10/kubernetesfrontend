@@ -17,7 +17,7 @@ export class FileSizePipe implements PipeTransform {
     const formattedSize = Math.round(size * 100) / 100;
     const unit = units[power];
 
-    return size ?  `${formattedSize} ${units}` : '0';
+    return size ?  `${formattedSize} ${unit}` : '0';
   }
 
 }
