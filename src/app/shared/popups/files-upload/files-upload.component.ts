@@ -48,4 +48,8 @@ export class FilesUploadComponent {
 
     console.log(files);
   }
+
+  onUploadCompleted(url: string): void {
+    this.filesURLs.push(url);
+  }
 }

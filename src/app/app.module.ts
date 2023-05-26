@@ -21,7 +21,7 @@ import { PopupsModule } from './shared/popups';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
