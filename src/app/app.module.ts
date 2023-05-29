@@ -19,15 +19,19 @@ import { IndicatorsModule } from './shared/indicators';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupsModule } from './shared/popups';
 import { NotificationModule } from './services';
-
+//                    ANGULAR MATERIAL
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { HeaderComponent } from './components/header/header.component';
+//                    FLEX
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
