@@ -5,7 +5,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-header></app-header>
+    <app-header (menuToggle)="menu.toggle()"></app-header>
 
     <main>
       <router-outlet></router-outlet>
