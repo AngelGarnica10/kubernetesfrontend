@@ -9,6 +9,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 //                    FLEX
 import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
@@ -23,7 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     MatIconModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatInputModule
   ]
 })
 export class LoginModule { }
