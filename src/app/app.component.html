@@ -1,7 +1,7 @@
 <mat-sidenav-container>
 
   <mat-sidenav #menu >
-    <p>Elemento side nav</p>
+    <app-menu-list (menuToggle)="menu.toggle()" ></app-menu-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
