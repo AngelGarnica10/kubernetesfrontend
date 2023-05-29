@@ -3,15 +3,27 @@ import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-
-
+import { FormsModule } from '@angular/forms';
+//                    ANGULAR MATERIAL
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+//                    FLEX
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     LoginComponent
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    FormsModule,
+    MatIconModule,
+    MatCardModule,
+    FlexLayoutModule
   ]
 })
 export class LoginModule { }
