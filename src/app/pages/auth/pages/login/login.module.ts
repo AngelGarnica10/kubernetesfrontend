@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 //                    FLEX
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SpinnerModule } from '@app/shared/indicators';
 @NgModule({
   declarations: [
     LoginComponent
@@ -25,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatCardModule,
     FlexLayoutModule,
-    MatInputModule
+    MatInputModule,
+    SpinnerModule
   ]
 })
 export class LoginModule { }
