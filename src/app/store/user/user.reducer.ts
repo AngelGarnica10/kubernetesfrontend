@@ -32,14 +32,14 @@ export function reducer( state = initialState, action: fromActions.All | any) : 
     case fromActions.Types.SIGN_IN_EMAIL:
       return { ...state, loading: true, entity: null, id: null, error: null }
     case fromActions.Types.SIGN_IN_EMAIL_SUCCESS:
-      return { ...state, loading: false, entity: action.user, id: action.id, error: null }
+      return { ...state, loading: false, entity: action.user, id: action.id, error: null, email: action.email }
     case fromActions.Types.SIGN_IN_EMAIL_ERROR:
       return { ...state, loading: false, entity: null, id: null, error: action.error }
     //    SIGNUP
     case fromActions.Types.SIGN_UP_EMAIL:
       return { ...state, loading: true, entity: null, id: null, error: null }
     case fromActions.Types.SIGN_UP_EMAIL_SUCCESS:
-      return { ...state, loading: false, entity: action.user, id: action.id, error: null }
+      return { ...state, loading: false, entity: action.user, id: action.id, error: null, email: action.email }
     case fromActions.Types.SIGN_UP_EMAIL_ERROR:
       return { ...state, loading: false, entity: null, id: null, error: action.error }
     //    LOGOUT

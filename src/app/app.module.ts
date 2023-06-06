@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 //            FIREBASE
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -21,6 +22,7 @@ import { PopupsModule } from './shared/popups';
 import { NotificationModule } from './services';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { reducers, effects } from './store';
+import { AuthInterceptor } from './auth-interceptor';
 //                    ANGULAR MATERIAL
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -77,7 +79,9 @@ const storeDevtools = !environment.production ? StoreDevtoolsModule.instrument( 
     EffectsModule.forRoot(effects),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

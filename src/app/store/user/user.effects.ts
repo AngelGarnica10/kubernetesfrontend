@@ -41,7 +41,7 @@ export class UserEffects {
             ),
             catchError((err: any) => {
               this.notification.error('Errores al registrar un nuevo usuario');
-              return of(new fromActions.SignInEmailError(err.message));
+              return of(new fromActions.SignUpEmailError(err.message));
             })
           )
       )
@@ -53,25 +53,25 @@ export class UserEffects {
       ofType(fromActions.Types.SIGN_IN_EMAIL),
       map((action: fromActions.SignInEmail) => action.credentials),
       switchMap((userData: any) =>
-        this.httpClient
-          .post<UserResponse>(`${environment.url}api/users/login`, userData)
-          .pipe(
-            tap((response: UserResponse) => {
-              localStorage.setItem('token', response.token);
-              this.router.navigate(['/']);
-            }),
-            map(
-              (response: UserResponse) =>
-                new fromActions.SignInEmailSuccess(
-                  response.email,
-                  response || null
-                )
-            ),
-            catchError((err: any) => {
-              this.notification.error('Las credenciales son incorrectas');
-              return of(new fromActions.SignInEmailError(err.message));
-            })
-          )
+      this.httpClient
+        .post<UserResponse>(`${environment.url}api/users/login`, userData)
+        .pipe(
+          tap((response: UserResponse) => {
+            localStorage.setItem('token', response.token);
+            this.router.navigate(['/']);
+          }),
+          map(
+            (response: UserResponse) =>
+            new fromActions.SignInEmailSuccess(
+              response.email,
+              response || null
+              )
+          ),
+          catchError((err: any) => {
+            this.notification.error('Las credenciales son incorrectas');
+            return of(new fromActions.SignInEmailError(err.message));
+          })
+        )
       )
     )
   );

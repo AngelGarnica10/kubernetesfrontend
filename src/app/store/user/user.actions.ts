@@ -23,7 +23,6 @@ export enum Types {
 //    INIT ->User is login
 export class Init implements Action {
   readonly type = Types.INIT;
-
   constructor(){}
 }
 
@@ -71,7 +70,6 @@ export class SignInEmailError implements Action {
 }
 
 //    SignUp
-
 export class SignUpEmail implements Action {
   readonly type = Types.SIGN_UP_EMAIL;
   constructor(
@@ -80,13 +78,12 @@ export class SignUpEmail implements Action {
 }
 
 export class SignUpEmailSuccess implements Action {
-  readonly type = Types.SIGN_IN_EMAIL_SUCCESS;
+  readonly type = Types.SIGN_UP_EMAIL_SUCCESS;
   constructor(
     public email: string,
-    public user: UserResponse
+    public user: UserResponse | null
   ) {}
 }
-
 export class SignUpEmailError implements Action {
   readonly type = Types.SIGN_UP_EMAIL_ERROR;
   constructor(
@@ -112,11 +109,6 @@ export class SignOutError implements Action {
   ) {}
 }
 
-// export class SignOut implements Action {
-//   readonly type = Types.SIGNUP_IN_EMAIL;
-//   constructor() {}
-// }
-
 export type All =
     Init |
     InitAuthorized |
@@ -126,7 +118,7 @@ export type All =
     SignInEmailSuccess |
     SignInEmailError |
     SignUpEmail |
-    SignInEmailSuccess |
+    SignUpEmailSuccess |
     SignUpEmailError |
     SignOut |
     SignOutSuccess |
