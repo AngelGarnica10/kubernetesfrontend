@@ -19,9 +19,14 @@
     <span class="navegation-list-label" >Contacto</span>
   </a>
 
-  <a *ngIf="isAuthorized" mat-list-item (click)="closeMenu()" >
+  <a *ngIf="isAuthorized" mat-list-item (click)="closeMenu()" routerLink="/builder/new" >
     <mat-icon>add</mat-icon>
-    <span class="navegation-list-label" >Nuevo Producto</span>
+    <span class="navegation-list-label" >Nuevo Inmueble</span>
+  </a>
+
+  <a *ngIf="isAuthorized" mat-list-item (click)="closeMenu()" routerLink="/builder/list" >
+    <mat-icon>add</mat-icon>
+    <span class="navegation-list-label" >Inmuebles</span>
   </a>
 
   <a *ngIf="isAuthorized" mat-list-item (click)="closeMenu()" (click)="onSignOut()" >
