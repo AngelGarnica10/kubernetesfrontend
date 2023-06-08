@@ -23,25 +23,27 @@ export function reducer( state = initialState, action: fromActions.All | any) : 
     case fromActions.Types.INIT:
       return { ...state, loading: true }
     case fromActions.Types.INIT_AUTHORIZED:
-      return { ...state, loading: false, entity: action.user, id: action.id, error: null }
+      return { ...state, loading: false, entity: action.user, email: action.email, error: null }
     case fromActions.Types.INIT_UNAUTHORIZED:
-      return { ...state, loading: false, entity: null, id: null, error: null }
+      return { ...state, loading: false, entity: null, email: null, error: null }
     case fromActions.Types.INIT_ERROR:
-      return { ...state, loading: false, entity: null, id: null, error: action.error }
+      return { ...state, loading: false, entity: null, email: null, error: action.error }
     //    LOGIN
     case fromActions.Types.SIGN_IN_EMAIL:
-      return { ...state, loading: true, entity: null, id: null, error: null }
-    case fromActions.Types.SIGN_IN_EMAIL_SUCCESS:
-      return { ...state, loading: false, entity: action.user, id: action.id, error: null, email: action.email }
+      return { ...state, loading: true, entity: null, email: null, error: null }
+    case fromActions.Types.SIGN_IN_EMAIL_SUCCESS: {
+      console.log('action', action);
+      return { ...state, loading: false, entity: action.user, email: action.email, error: null }
+    }
     case fromActions.Types.SIGN_IN_EMAIL_ERROR:
-      return { ...state, loading: false, entity: null, id: null, error: action.error }
+      return { ...state, loading: false, entity: null, email: null, error: action.error }
     //    SIGNUP
     case fromActions.Types.SIGN_UP_EMAIL:
-      return { ...state, loading: true, entity: null, id: null, error: null }
+      return { ...state, loading: true, entity: null, email: null, error: null }
     case fromActions.Types.SIGN_UP_EMAIL_SUCCESS:
-      return { ...state, loading: false, entity: action.user, id: action.id, error: null, email: action.email }
+      return { ...state, loading: false, entity: action.user, email: action.email, error: null }
     case fromActions.Types.SIGN_UP_EMAIL_ERROR:
-      return { ...state, loading: false, entity: null, id: null, error: action.error }
+      return { ...state, loading: false, entity: null, email: null, error: action.error }
     //    LOGOUT
     case fromActions.Types.SIGN_OUT_EMAIL:
       return { ...initialState }
