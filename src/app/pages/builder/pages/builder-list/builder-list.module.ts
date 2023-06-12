@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { BuilderListRoutingModule } from './builder-list-routing.module';
 import { BuilderListComponent } from './builder-list.component';
+import { SpinnerModule } from '@app/shared/indicators';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -11,7 +14,12 @@ import { BuilderListComponent } from './builder-list.component';
   ],
   imports: [
     CommonModule,
-    BuilderListRoutingModule
+    BuilderListRoutingModule,
+
+    SpinnerModule,
+    MatButtonModule,
+    MatCardModule,
+
   ]
 })
 export class BuilderListModule { }

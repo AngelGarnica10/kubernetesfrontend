@@ -7,8 +7,12 @@ export const getListState = createSelector(
   (state: BuildingState) => state.list
 )
 
-
 export const getLoading = createSelector(
   getListState,
   (state: ListState) => state.loading
+)
+
+export const getBuildings = createSelector(
+  getListState,
+  (state: ListState) => state.buildings
 )

@@ -2,13 +2,13 @@ import { Action } from "@ngrx/store";
 import { BuildingCreateRequest, BuildingResponse } from "./save.models";
 
 export enum Types {
-  CREATE = '[Inmueble Create: Start]',
-  CREATE_SUCCESS = '[Inmueble Create: Success]',
-  CREATE_ERROR = '[Inmueble Create: Error]',
+  CREATE = '[Buyilding: Start]',
+  CREATE_SUCCESS = '[Buyilding: Success]',
+  CREATE_ERROR = '[Buyilding: Error]',
 
-  READ = '[OObtener Inmueble: Start]',
-  READ_SUCCESS = '[OObtener Inmueble: Success]',
-  READ_ERROR = '[OObtener Inmueble: Error]'
+  READ = '[Building Start]',
+  READ_SUCCESS = 'Building: Success]',
+  READ_ERROR = '[Building Error]'
 }
 
 export class Create implements Action {

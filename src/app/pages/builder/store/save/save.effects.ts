@@ -48,7 +48,10 @@ export class SaveEffects {
         this.httpClient.get<BuildingResponse[]>(`${environment.url}api/buildings`)
         .pipe(
           delay(1000),
-          map((response: BuildingResponse[]) => new fromActions.ReadSuccess(response)),
+          map((response: BuildingResponse[]) => {
+            console.log('response', response);
+            return new fromActions.ReadSuccess(response);
+          }),
           catchError(err => {
             this.notification.error(`Ocurrio un error al obtener los inmuebles`);
             return of(new fromActions.ReadError(err.message));
