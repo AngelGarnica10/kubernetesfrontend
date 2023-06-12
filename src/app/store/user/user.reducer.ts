@@ -31,10 +31,8 @@ export function reducer( state = initialState, action: fromActions.All | any) : 
     //    LOGIN
     case fromActions.Types.SIGN_IN_EMAIL:
       return { ...state, loading: true, entity: null, email: null, error: null }
-    case fromActions.Types.SIGN_IN_EMAIL_SUCCESS: {
-      console.log('action', action);
+    case fromActions.Types.SIGN_IN_EMAIL_SUCCESS:
       return { ...state, loading: false, entity: action.user, email: action.email, error: null }
-    }
     case fromActions.Types.SIGN_IN_EMAIL_ERROR:
       return { ...state, loading: false, entity: null, email: null, error: action.error }
     //    SIGNUP

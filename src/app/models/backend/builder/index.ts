@@ -1,7 +1,8 @@
-export interface builder {
+export interface Building {
   id: number;
   name: string;
-  image: string;
-  price: string;
-  date: string
+  picture: string;
+  price: number;
+  createdAt: string
+  address: string;
 }

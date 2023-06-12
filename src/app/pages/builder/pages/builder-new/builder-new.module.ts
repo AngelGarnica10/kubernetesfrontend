@@ -3,7 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { BuilderNewRoutingModule } from './builder-new-routing.module';
 import { BuilderNewComponent } from './builder-new.component';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SpinnerModule } from '@app/shared/indicators';
+import { EntityPhotoModule } from '@app/shared/layouts';
+import { PopupsModule } from '@app/shared/popups';
 
 @NgModule({
   declarations: [
@@ -11,7 +21,18 @@ import { BuilderNewComponent } from './builder-new.component';
   ],
   imports: [
     CommonModule,
-    BuilderNewRoutingModule
+    BuilderNewRoutingModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    FlexLayoutModule,
+    SpinnerModule,
+    EntityPhotoModule,
+    PopupsModule
   ]
 })
 export class BuilderNewModule { }
